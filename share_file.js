@@ -132,12 +132,12 @@ function createFile(content, fileName) {
     .then(async (response) => {   // 👈 make this async
       if (response.status === 201) {
         // appendOutput(`✅ File created: ${fileName}`, "log");
-        const link = `http://127.0.0.1:5500/#/${fileName}`;
+        const link = `https://${username}.github.io/#/${fileName}`;
 
         try {
           await navigator.clipboard.writeText(link);
           alert("Link copied to clipboard!");
-        appendOutput("Link copied to clipboard!", "info")
+        appendOutput("Link copied to clipboard!", "info");
         appendOutput(link, "log")
         } catch (err) {
           console.error("Failed to copy: ", err);
